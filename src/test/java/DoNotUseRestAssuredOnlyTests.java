@@ -3,7 +3,7 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.jupiter.api.Test;
-import org.powertester.annotations.FlakyTest;
+import org.mycompany.annotations.FlakyTest;
 
 /**
  * These tests are for demo purpose only (and to show the challenges that comes with relying only on

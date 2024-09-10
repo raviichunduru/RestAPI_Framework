@@ -84,7 +84,6 @@ Refer information [here](https://github.com/sliteteam/github-action-git-crypt-un
 > control.
 
 ```commandline
-Pramod Yadav@DESKTOP-GPU5LFR MINGW64 ~/restpro (main)
 $ git-crypt export-key ./git-crypt-key-restpro && cat ./git-crypt-key-restpro | base64
 AEdJVENSWVBUS0VZAAAAAgAAAAAAAAABAAAABAAAAAAAAAADAAAAIODz1YHHA96CZubMzshhXpKh
 SIuNpeEPbQmvIcBT8UTuAAAABQAAAEAfT0bYmgWbxK+RI/mKsJXtCq9Th77lSR0D1G/5WGfspccv

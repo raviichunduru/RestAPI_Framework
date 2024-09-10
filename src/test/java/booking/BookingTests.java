@@ -1,8 +1,8 @@
 package booking;
 
 import static org.apache.http.HttpStatus.*;
-import static org.powertester.auth.Scope.ADMIN;
-import static org.powertester.auth.Scope.GUEST;
+import static org.mycompany.auth.Scope.ADMIN;
+import static org.mycompany.auth.Scope.GUEST;
 
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
@@ -10,10 +10,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.powertester.annotations.FailingTest;
-import org.powertester.annotations.RegressionTest;
-import org.powertester.booking.Booking;
-import org.powertester.booking.BookingAPI;
+import org.mycompany.annotations.FailingTest;
+import org.mycompany.annotations.RegressionTest;
+import org.mycompany.booking.Booking;
+import org.mycompany.booking.BookingAPI;
 
 @Slf4j
 @RegressionTest
@@ -70,7 +70,7 @@ public class BookingTests {
     @Test
     void assertThatAUserCanUpdateAnExistingBooking() {
       // Arrange
-      booking.setFirstname("Vinod");
+      booking.setFirstname("NewFirstName");
 
       // Act
       Response response = BookingAPI.useAs(ADMIN).updateBooking(booking, bookingId);
@@ -88,7 +88,7 @@ public class BookingTests {
     void assertThatAUserCanPartiallyUpdateAnExistingBooking() {
       // Arrange
       Booking partialBooking =
-          Booking.builder().setFirstname("Pramod").setLastname("Yadav").build();
+          Booking.builder().setFirstname("Raghavaiah").setLastname("Chunduru").build();
 
       log.info("partialBookingBody: {}", partialBooking);
 

@@ -2,8 +2,8 @@ package booking;
 
 import asserts.VerifyResponse;
 import io.restassured.response.Response;
-import org.powertester.booking.Booking;
-import org.powertester.booking.BookingResponse;
+import org.mycompany.booking.Booking;
+import org.mycompany.booking.BookingResponse;
 
 public class VerifyBookingResponse extends VerifyResponse<VerifyBookingResponse> {
   private VerifyBookingResponse(Response response) {

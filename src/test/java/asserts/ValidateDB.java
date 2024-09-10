@@ -11,9 +11,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
 import org.awaitility.Awaitility;
-import org.powertester.config.TestConfig;
-import org.powertester.data.TestData;
-import org.powertester.database.DBConnection;
+import org.mycompany.config.TestConfig;
+import org.mycompany.data.TestData;
+import org.mycompany.database.DBConnection;
 
 @Slf4j
 public class ValidateDB {

@@ -2,8 +2,8 @@ package unittests;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.powertester.annotations.CsvTest;
-import org.powertester.annotations.UnitTest;
+import org.mycompany.annotations.CsvTest;
+import org.mycompany.annotations.UnitTest;
 
 @UnitTest
 @Slf4j

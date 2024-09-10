@@ -104,9 +104,9 @@ the below command in a powershell or a git terminal
 
 > Note: It would not work from intellij or normal terminals.
 
-`java -jar "C:\Users\Pramod Yadav\.cache\pre-commit\google-java-formatter1.16.0.jar" --replace $(git ls-files *.java)`
+`java -jar "C:\Users\Raghavaiah Chunduru\.cache\pre-commit\google-java-formatter1.16.0.jar" --replace $(git ls-files *.java)`
 
-> Here you to replace the "Pramod Yadav" user with your user directory where this jar file was downloaded.
+> Here you to replace the "Raghavaiah Chunduru" user with your user directory where this jar file was downloaded.
 > Once formatted push all the changes in a PR and you can be assured that you dont have to see any formatting related
 > issues anymore in your project PRs.
 >
