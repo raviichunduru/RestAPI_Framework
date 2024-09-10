@@ -9,19 +9,19 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven.compiler.plugin>3.10.1</maven.compiler.plugin>
-        <maven.surefire.plugin>3.0.0-M5</maven.surefire.plugin>
-        <maven.site.plugin>3.11.0</maven.site.plugin>
-        <junit.jupiter.version>5.10.1</junit.jupiter.version>
-        <lombok.version>1.18.30</lombok.version>
-        <typesafe.version>1.4.2</typesafe.version>
+        <maven.compiler.plugin>3.13.0</maven.compiler.plugin>
+        <maven.surefire.plugin>3.5.0</maven.surefire.plugin>
+        <maven.site.plugin>4.0.0-M16</maven.site.plugin>
+        <junit.jupiter.version>5.11.0</junit.jupiter.version>
+        <lombok.version>1.18.34</lombok.version>
+        <typesafe.version>1.4.3</typesafe.version>
         <elasticsearch-java.version>8.6.1</elasticsearch-java.version>
-        <jackson-databind.version>2.14.1</jackson-databind.version>
+        <jackson-databind.version>2.17.2</jackson-databind.version>
         <jakarta.json-api.version>2.0.1</jakarta.json-api.version>
-        <rest-assured.version>5.3.2</rest-assured.version>
+        <rest-assured.version>5.5.0</rest-assured.version>
         <assertj-core.version>3.24.2</assertj-core.version>
         <HikariCP.version>5.1.0</HikariCP.version>
         <awaitility.version>4.2.0</awaitility.version>

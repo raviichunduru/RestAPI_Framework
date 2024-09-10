@@ -1,6 +1,6 @@
 repos:
   -   repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.4.0
+      rev: v4.6.0
       hooks:
         -   id: check-yaml
         -   id: check-json
@@ -10,7 +10,7 @@ repos:
         -   id: trailing-whitespace
 
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-    rev: 54f7f7c5cb9501110b928f2a98faa8024142f8d7
+    rev: 7a279fad9f0f4b98c7f75fc966931bbd7034b0de
     hooks:
       - id: pretty-format-java
         args: [--autofix]
