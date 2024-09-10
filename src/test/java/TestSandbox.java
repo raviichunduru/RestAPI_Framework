@@ -1,9 +1,9 @@
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import com.typesafe.config.Config;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
 import org.mycompany.annotations.FailingTest;
 import org.mycompany.annotations.FlakyTest;
 import org.mycompany.annotations.SmokeTest;
@@ -19,11 +19,7 @@ public class TestSandbox {
     assertAll(
         "Config Test",
         () -> assertEquals("STAGING", CONFIG.getString("TEST_ENV"), "TEST_ENV"),
-        () ->
-            assertEquals(
-                "/booking",
-                CONFIG.getString("BOOKING_ENDPOINT"),
-                "BOOKING_ENDPOINT"),
+        () -> assertEquals("/booking", CONFIG.getString("BOOKING_ENDPOINT"), "BOOKING_ENDPOINT"),
         () -> assertEquals("admin", CONFIG.getString("ADMIN_USERNAME"), "ADMIN_USERNAME"),
         () -> assertEquals("password123", CONFIG.getString("ADMIN_PASSWORD"), "ADMIN_PASSWORD"),
         () -> assertEquals(false, CONFIG.getBoolean("TOGGLE"), "TOGGLE"),
@@ -53,7 +49,7 @@ public class TestSandbox {
     }
   }
 
-  @Test
+  @SmokeTest
   void testLogLevels() {
     log.info("this is info statement");
     log.debug("this is debug statement");
