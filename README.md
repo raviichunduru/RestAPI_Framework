@@ -2,18 +2,12 @@
 
 Test RestAPIS like a PRO.
 
-![build status](https://img.shields.io/github/actions/workflow/status/pramodkumaryadav/restpro/trigger-tests-on-pull-request.yml?logo=GitHub)
-![open issues](https://img.shields.io/github/issues/PramodKumarYadav/restpro)
-![forks](https://img.shields.io/github/forks/PramodKumarYadav/restpro)
-![stars](https://img.shields.io/github/stars/PramodKumarYadav/restpro)
-![license](https://img.shields.io/github/license/PramodKumarYadav/restpro?style=flat-square)
-![languages](https://img.shields.io/github/languages/count/pramodkumaryadav/restpro)
-![info](https://img.shields.io/static/v1?label=with-love-from&message=power-tester&color=blue?style=plastic&logo=appveyor)
-
-> NOTE: 
-> 1. I found that a few users who tried to use this project struggled to use git-crypt properly to decrypt encrypted secrets and thus were not able to move forward with rest of learnings too. 
-> 2. To make the entry barrier minimum for new users, I am removing encryption from [secrets.conf](src/main/resources/develop/secrets.conf) files and storing them as plain text for training purpose. 
-> 3. That said, in a real project you should use the instructions mentioned here in this readme file [**git-crypt**](docs/README-GIT-CRYPT.md) to encrypt/decrypt secrets and MUST not store your secrets in plain text.
+![build status](https://img.shields.io/github/actions/workflow/status/raviichunduru/RestAPI_Framework/trigger-new-updated-and-unit-tests-on-pull-request.yml?logo=GitHub)
+![open issues](https://img.shields.io/github/issues/raviichunduru/RestAPI_Framework)
+![forks](https://img.shields.io/github/forks/raviichunduru/RestAPI_Framework)
+![stars](https://img.shields.io/github/stars/raviichunduru/RestAPI_Framework)
+![license](https://img.shields.io/github/license/raviichunduru/RestAPI_Framework?style=flat-square)
+![languages](https://img.shields.io/github/languages/count/raviichunduru/RestAPI_Framework)
 
 ## Application under test
 
@@ -29,9 +23,6 @@ Test RestAPIS like a PRO.
 
 ## 🚀 Core features
 
-- [x] Allow to put both exploratory tests (postman style http requests) and automated tests (RestAssured) side-by-side
-  in the same framework. Usually due to Postman not being git compatible, these two tests live in two separate
-  places/repositories.
 - [x] Shows how to create a decoupled test design (that minimises maintenance efforts by reducing code
   duplication and increases code readability by separating test intentions from implementation details).
 - [x] Allows users to write fluent assertions for asserting both status and response body, without any code duplication.
@@ -42,20 +33,7 @@ Test RestAPIS like a PRO.
 - [ ] Shows how to use health checks in the test CI to have efficient pipelines.
 - [ ] Shows how to insert test data dynamically in each test.
 
-> A Note on Postman style (HTTP Request) tests from AQUA:
-> - These tests are git compatible (unlike Postman that requires you to take a paid
-    membership for properly version controlling its collections). In these HTTP request tests:
-> - User can define different environments (such as localhost, develop, staging). For each environment, user can
-    specify env specific configuration such as hostURLs.
-> - Provides a way to separate secret information (such as userid/password) from other generic config information.
-> - Provides a way to run pre-request and post-request scripts that can be used to set variables such as auth-tokens.
-> - Until AQUA IDE is closedThese auth-tokens/variables are then available to any other http request that needs to use
-    these tokens/variables.
-> - Provides a way to run post-request scripts that can be used to set variables, log values and write some basic tests.
-
 ## 🎯 Standard features
-
-> From RestAssured testing and [Core test framework: zero](https://github.com/PramodKumarYadav/zero) are as below:
 
 - [ ] Shows how to integrate your tests in CI (GitHub Actions).
 - [ ] Shows how to log your test results into a test monitoring system (such as Elastic/Kibana or DataDog)
@@ -83,7 +61,6 @@ Key tools to be used in this core framework are:
 - [x] **Slack integration** (for giving notifications on pull requests)
 - [x] **Elastic and Kibana** (for test monitoring)
 - [ ] **Docker** (for automating test framework's environment)
-- [ ] **Powershell or bash Script** (for automating building test environment)
 - [ ] **SonarQube/SonarLint** (for keeping your code clean and safe)
 - [x] **Badges** (for a quick view on your project meta and build status)
 

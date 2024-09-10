@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
-import org.powertester.annotations.HealthCheckTest;
-import org.powertester.healthcheck.HealthCheckAPI;
+import org.mycompany.annotations.HealthCheckTest;
+import org.mycompany.healthcheck.HealthCheckAPI;
 
 @HealthCheckTest
 class HealthCheckTests {
