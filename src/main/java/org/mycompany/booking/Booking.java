@@ -1,6 +1,7 @@
 package org.mycompany.booking;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.github.javafaker.Faker;
 import java.util.concurrent.TimeUnit;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
-import net.datafaker.Faker;
 import org.mycompany.booking.entitites.Bookingdates;
 
 @Slf4j
@@ -29,8 +29,8 @@ public class Booking {
   public static Booking getInstance() {
     Bookingdates bookingdates =
         Bookingdates.builder()
-            .setCheckin(new Faker().date().future(1, TimeUnit.DAYS, "YYYY-MM-dd"))
-            .setCheckout(new Faker().date().future(6, TimeUnit.DAYS, "YYYY-MM-dd"))
+            .setCheckin(String.valueOf(new Faker().date().future(1, TimeUnit.DAYS)))
+            .setCheckout(String.valueOf(new Faker().date().future(6, TimeUnit.DAYS)))
             .build();
 
     Booking booking =

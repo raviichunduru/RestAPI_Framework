@@ -35,6 +35,10 @@ public class BookingTests {
     // Assert
     VerifyBookingResponse.assertThat(response)
         .statusCodeIs(SC_OK)
+        // .contentTypeIs(ContentType.JSON)
+        // .hasKeyWithValue("firstname",booking.getFirstname())
+        .containsValue("bookingid")
+        .doesNotContains("error")
         .matchesSchema(CREATE_BOOKING_SCHEMA_FILE_PATH)
         .postHasBooking(booking)
         .assertAll();
