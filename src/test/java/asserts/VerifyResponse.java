@@ -2,7 +2,9 @@ package asserts;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import java.util.function.Predicate;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
 
@@ -23,12 +25,42 @@ public abstract class VerifyResponse<SELF_TYPE extends VerifyResponse<?>> {
     return selfType;
   }
 
+  public SELF_TYPE contentTypeIs(ContentType contentType) {
+    softAssertions
+        .assertThat(response.getContentType())
+        .as("Content Type validation")
+        .isEqualTo(contentType.toString());
+    return selfType;
+  }
+
+  public SELF_TYPE matchingRule(Predicate<Response> condition, String errorMessage) {
+    softAssertions.assertThat(condition).withFailMessage(errorMessage).accepts(response);
+    return selfType;
+  }
+
+  public SELF_TYPE hasKeyWithValue(String key, String expectedValue) {
+    String actualValue = response.jsonPath().getString(key);
+    softAssertions
+        .assertThat(actualValue)
+        .as("body node validation in response")
+        .isEqualTo(expectedValue);
+    return selfType;
+  }
+
   public SELF_TYPE containsValue(String value) {
     softAssertions
         .assertThat(response.getBody().asString())
         .describedAs("responseBody")
         .contains(value);
 
+    return selfType;
+  }
+
+  public SELF_TYPE doesNotContains(String value) {
+    softAssertions
+        .assertThat(response.body().asString())
+        .as("Body node validation in response")
+        .doesNotContain(value);
     return selfType;
   }
 

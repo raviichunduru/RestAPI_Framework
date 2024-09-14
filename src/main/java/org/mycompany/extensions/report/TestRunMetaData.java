@@ -2,6 +2,7 @@ package org.mycompany.extensions.report;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.javafaker.Faker;
 import com.typesafe.config.Config;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -10,7 +11,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.datafaker.Faker;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.mycompany.config.TestConfig;
 import org.mycompany.extensions.TimingExtension;
@@ -25,7 +25,7 @@ public class TestRunMetaData {
 
   private static final String RUN_TIME = LocalDateTime.now(ZoneId.of("UTC")).toString();
 
-  private static final String RUN_NAME = new Faker().funnyName().name();
+  private static final String RUN_NAME = getRunName();
 
   private static final String TRIGGERED_BY = getTriggeredBy();
 
@@ -109,6 +109,14 @@ public class TestRunMetaData {
       return System.getProperty("user.name");
     } else {
       return CONFIG.getString("TRIGGERED_BY");
+    }
+  }
+
+  private static String getRunName() {
+    if (CONFIG.getString("RUN_NAME").isEmpty()) {
+      return Faker.instance().funnyName().name();
+    } else {
+      return CONFIG.getString("RUN_NAME");
     }
   }
 
